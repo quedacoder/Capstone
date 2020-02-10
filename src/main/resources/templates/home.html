@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/header :: header"></head>
+	<body>
+	
+		<!-- Navigation Bar -->
+		<nav th:replace="fragments/navigation :: navigation">
+		</nav>
+		
+		<!-- Carousel Slider -->
+		<div class="container-fluid">
+			<div id="header-slide" class="carousel slide" data-ride="carousel">
+		  		<div class="carousel-inner">
+			  		<div class="carousel-item active">
+			  			<!-- Carousel Items -->
+			  			<div th:replace="fragments/slide-item :: item2"></div>
+			  		</div>
+			  		<div class="carousel-item">
+			  			<!-- Carousel Items -->
+			  			<div th:replace="fragments/slide-item :: item1"></div>
+			  		</div>
+			  		<div class="carousel-item">
+			  			<!-- Carousel Items -->
+			  			<div th:replace="fragments/slide-item :: item3"></div>
+			  		</div>
+			  		<a class="carousel-control-prev" href="#header-slide" role="button" data-slide="prev">
+		  				<span aria-hidden="true"><i class="fas fa-angle-left fa-2x"></i></span>
+		  				<span class="sr-only">Previous</span>
+		  			</a>
+		  			<a class="carousel-control-next" href="#header-slide" role="button" data-slide="next">
+		  				<span aria-hidden="true"><i class="fas fa-angle-right fa-2x"></i></span>
+		  				<span class="sr-only">Next</span>
+		  			</a>
+		  		</div>
+			</div>
+		</div>
+	
+	</body>
+</html>

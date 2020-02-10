@@ -1,0 +1,85 @@
+/****************************************
+*             Navigation                *
+*****************************************/
+#navbar-style-custom {
+	height: 80px;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	background-color: #222!important;
+}
+
+#logo-custom {
+	font-weight: 700;
+	line-height: 20px;
+	font-size: 25px;
+}
+
+.navigation-center {
+	margin-right: 8%;
+}
+
+li a {
+	color: white;
+}
+
+.nav>li{
+  border-right: 1px solid white;
+}
+
+.nav>li:last-child{
+   border: none;
+}
+
+/****************************************
+*           Carousel Header             *
+*****************************************/
+.carousel-text-align {
+	text-align: center;
+}
+
+#carousel-header-2 {
+	/*margin-left:42.5%;*/
+	margin-top: 4%;
+	margin-bottom: 4%;
+	color: #222;
+}
+
+.col > p {
+	margin-top: 5%;
+	margin-bottom: 3%;
+}
+
+.carousel-control-prev > span {
+	color: #222;
+}
+
+.carousel-control-next > span {
+	color: #222;
+}
+
+.remove-margin {
+	margin-top: 0px;
+}
+
+.item3-margin {
+	margin-top: 3%;
+}
+
+.margin-top-zero {
+	margin-top: 0px!important;
+}
+
+.item-headers {
+	margin-top: 1%;
+	margin-bottom: 0px
+}
+
+.text-align {
+	text-align: center;
+	margin-top: 5%;
+}
+
+.center-forms {
+	margin: 10% auto;
+	width: 35%;
+}

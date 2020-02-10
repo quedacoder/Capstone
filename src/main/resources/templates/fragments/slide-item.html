@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="fragments/header :: header"></head>
+	<body>
+	  	<div th:fragment="item1">
+  			<h2 class="carousel-text-align" id="carousel-header-2">About Company</h2>
+			<hr >
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<p>Aliquam fringilla dignissim turpis non egestas. Aenean suscipit laoreet lacinia. 
+						   Nulla in ullamcorper ante, fermentum lobortis lacus. Vivamus id massa felis. Nulla
+						   hendrerit purus enim, at molestie enim ultrices ac. Duis sed mauris sed mi congue 
+						   semper sed rhoncus lorem. Donec lobortis nibh ut justo mollis tincidunt. Praesent 
+						   congue sagittis enim nec faucibus. Quisque ultrices nisl in dictum elementum. 
+						   Phasellus at ligula ac diam luctus condimentum. In ornare tellus eu volutpat 
+						   tincidunt. Nullam vehicula lobortis sem, sit amet auctor nulla sodales sed. Nullam 
+						   euismod lectus erat, id molestie mi mollis gravida. Quisque efficitur consequat 
+						   nisl, et efficitur purus scelerisque non. Suspendisse venenatis orci eget vestibulum 
+						   semper. Suspendisse ipsum lorem, posuere non ante tempor, dictum rhoncus nibh.</p>
+					</div>
+				</div>
+		  		<div class="row">
+		  			<div class="col text-align">
+		  				<a class="btn btn-primary" th:href="@{login}" role="button">new account</a>
+		  			</div>
+		  		</div>
+			</div>
+  		</div>
+  		
+  		<div th:fragment="item2">
+  			<h2 class="carousel-text-align" id="carousel-header-2">Hey Friends</h2>
+			<hr >
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<p>Aliquam fringilla dignissim turpis non egestas. Aenean suscipit laoreet lacinia. 
+						   Nulla in ullamcorper ante, fermentum lobortis lacus. Vivamus id massa felis. Nulla
+						   hendrerit purus enim, at molestie enim ultrices ac. Duis sed mauris sed mi congue 
+						   semper sed rhoncus lorem. Donec lobortis nibh ut justo mollis tincidunt. Praesent 
+						   congue sagittis enim nec faucibus. Quisque ultrices nisl in dictum elementum. 
+						   Phasellus at ligula ac diam luctus condimentum. In ornare tellus eu volutpat 
+						   tincidunt. Nullam vehicula lobortis sem, sit amet auctor nulla sodales sed. Nullam 
+						   euismod lectus erat, id molestie mi mollis gravida. Quisque efficitur consequat 
+						   nisl, et efficitur purus scelerisque non. Suspendisse venenatis orci eget vestibulum 
+						   semper. Suspendisse ipsum lorem, posuere non ante tempor, dictum rhoncus nibh.</p>
+					</div>
+					<div class="col">
+						<p>Aliquam fringilla dignissim turpis non egestas. Aenean suscipit laoreet lacinia. 
+						   Nulla in ullamcorper ante, fermentum lobortis lacus. Vivamus id massa felis. Nulla
+						   hendrerit purus enim, at molestie enim ultrices ac. Duis sed mauris sed mi congue 
+						   semper sed rhoncus lorem. Donec lobortis nibh ut justo mollis tincidunt. Praesent 
+						   congue sagittis enim nec faucibus. Quisque ultrices nisl in dictum elementum. 
+						   Phasellus at ligula ac diam luctus condimentum. In ornare tellus eu volutpat 
+						   tincidunt. Nullam vehicula lobortis sem, sit amet auctor nulla sodales sed. Nullam 
+						   euismod lectus erat, id molestie mi mollis gravida. Quisque efficitur consequat 
+						   nisl, et efficitur purus scelerisque non. Suspendisse venenatis orci eget vestibulum 
+						   semper. Suspendisse ipsum lorem, posuere non ante tempor, dictum rhoncus nibh.</p>
+					</div>
+				</div>
+				<div class="row">
+		  			<div class="col text-align">
+		  				<a class="btn btn-primary" th:href="@{login}" role="button">new account</a>
+		  			</div>
+		  		</div>
+			</div>
+  		</div>
+  		
+  		<div th:fragment="item3" class="item3-margin">
+  			<h2 class="carousel-text-align" id="carousel-header-2">Features</h2>
+			<hr >
+			<div class="container item3-margin">
+				<div class="row">
+					<div class="col">
+						<i class="fab fa-simplybuilt fa-lg"></i>
+					</div>
+					<div class="col">
+						<i class="fas fa-sliders-h fa-lg"></i>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h6 class="item-headers">Simply Built</h6>
+					</div>
+					<div class="col">
+						<h6 class="item-headers">Responsive</h6>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<p class="margin-top-zero">Aliquam fringilla dignissim turpis non egestas. Aenean suscipit laoreet lacinia. 
+						   Nulla in ullamcorper ante, fermentum lobortis lacus.</p>
+					</div>
+					<div class="col">
+						<p  class="margin-top-zero">Aliquam fringilla dignissim turpis non egestas. Aenean suscipit laoreet lacinia. 
+						   Nulla in ullamcorper ante, fermentum lobortis lacus. Duis sed mauris sed mi congue 
+						   semper sed rhoncus lorem. Donec lobortis nibh ut justo mollis tincidunt.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<i class="fas fa-user-graduate fa-lg"></i>
+					</div>
+					<div class="col">
+						<i class="fas fa-anchor fa-lg"></i>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h6 class="item-headers">User Friendly</h6>
+					</div>
+					<div class="col">
+						<h6 class="item-headers">Task Management</h6>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<p class="margin-top-zero">Aliquam fringilla dignissim turpis non egestas. Aenean suscipit laoreet lacinia. 
+						   Nulla in ullamcorper ante, Donec lobortis nibh ut justo mollis tincidunt.</p>
+					</div>
+					<div class="col">
+						<p  class="margin-top-zero">Aliquam fringilla dignissim turpis non egestas. Aenean suscipit laoreet lacinia. 
+						   Nulla in ullamcorper ante</p>
+					</div>
+				</div>
+			</div>
+  		</div>
+	</body>
+</html>
