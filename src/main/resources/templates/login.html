@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/header :: header"></head>
+	<body>
+	
+		<!-- Navigation Bar -->
+		<nav th:replace="fragments/navigation :: navigation">
+		</nav>
+		
+		<!-- Header Information -->
+		<!-- TODO: Figure out a way to make this a fragment and adding header to model attribute -->
+		<header class="container-fluid">
+			<h2 class="carousel-text-align" id="carousel-header-2">Sign In</h2>
+			<hr >
+		</header>
+		<!-- Login Form -->
+		<div class="container">
+			<div class="row">
+				<form class="center-forms">
+				  	<div class="form-group row">
+				    	<label for="exampleInputEmail1">Email address</label>
+				    	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				    	<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				  	</div>
+				  	<div class="form-group row">
+				    	<label for="exampleInputPassword1">Password</label>
+				    	<input type="password" class="form-control" id="exampleInputPassword1">
+				  	</div>
+				  	<div class="form-group form-check row">
+				    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+				    	<label class="form-check-label" for="exampleCheck1">Check me out</label>
+				  	</div>
+				  	<div class="text-align">
+				  		<a class="btn btn-primary" style="color: white;" role="button">Create Account</a>
+				  	</div>
+				</form>			
+			</div>
+		</div>
+	</body>
+</html>

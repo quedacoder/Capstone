@@ -83,3 +83,8 @@ li a {
 	margin: 10% auto;
 	width: 35%;
 }
+
+#registration-login-link {
+	margin-left: 2%;
+    margin-top: 1.5%;
+}
