@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<!-- Header Information -->
+	<head th:replace="fragments/header :: header"></head>
+	<body>
+		<!-- Navigation Bar -->
+		<nav th:replace="fragments/navigation-unsecure :: navigation">
+		</nav>
+		<!-- Sub Navigation Bar -->
+		<nav th:replace="fragments/sub-navigation :: sub-nav">
+		</nav>
+		<!-- Page Title Information -->
+		<!-- TODO: Figure out a way to make this a fragment and adding header to model attribute -->
+		<header class="container-fluid">
+			<h2 class="carousel-text-align" id="carousel-header-2">Create Project</h2>
+			<hr >
+		</header>
+		
+		<div class="container-fluid">
+			<form th:action="@{/create-project}" th:object="${project}" method="post">
+				<div class="form-row project-form-space">
+					<div class="form-group col-md-8">
+					    <!-- Form Row 1 -->
+					    <div class="form-row">
+					    	<div class="form-group col">
+					    		<label for="projecName">Project Name</label>
+								<input type="text" class="form-control project-input" id="projectName" th:field="*{projectName}" th:classappend="${#fields.hasErrors('projectName')} ? is-invalid :''">
+								<div th:if="${#fields.hasErrors('projectName')}" th:class="invalid-feedback" th:errors="*{projectName}">
+						    		<p th:errors="*{projectName}"></p>
+						    	</div>
+					    	</div>
+					    	<div class="form-group col">
+								<label for="processArea">Process Area</label>
+								<select class="custom-select project-input" name="processArea" th:classappend="${#fields.hasErrors('processArea')} ? is-invalid :''">
+									<option th:each="pArea: ${T(com.quedacoder.WorkTaskApplication.enums.ProcessArea).values()}"
+									        th:value="${pArea}" th:text="${pArea.processArea}"></option>
+								</select>
+								<div th:if="${#fields.hasErrors('processArea')}" th:class="invalid-feedback" th:errors="*{processArea}">
+						    		<p th:errors="*{processArea}"></p>
+						    	</div>
+							</div>
+					    </div>
+					    <!-- Form Row 2 -->
+					    <div class="form-row">
+					    	<div class="form-group col">
+					    		<label for="projecOwner">Project Owner</label>
+								<input type="text" class="form-control project-input" id="projectOwner" th:field="*{projectOwner}" th:classappend="${#fields.hasErrors('projectOwner')} ? is-invalid :''">
+								<div th:if="${#fields.hasErrors('projectOwner')}" th:class="invalid-feedback" th:errors="*{projectOwner}">
+						    		<p th:errors="*{projectOwner}">Validation error</p>
+						    	</div>
+					    	</div>
+					    	<div class="form-group col">
+					    		<!-- TODO: Change to something else authenticated user is not being used anymore -->
+								<label for="processArea">Created By</label>
+								<input type="text" class="form-control project-input" id="processArea" th:value="${authenticatedUser}" readonly>
+							</div>
+					    </div>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="description">Description</label>
+						<textarea cols="25" rows="5" class="form-control" th:field="*{description}" th:classappend="${#fields.hasErrors('description')} ? is-invalid :''"></textarea>
+						<div th:if="${#fields.hasErrors('description')}" th:class="invalid-feedback" th:errors="*{description}">
+				    		<p th:errors="*{description}"></p>
+				    	</div>
+					</div>
+					
+				</div>
+				<div class="form-row">
+					<div class="form-group mr-auto ml-auto">
+						<button type="submit" class="btn btn-danger mr-auto ml-auto" name="action" value="cancel">Cancel</button>
+						<button type="submit" class="btn btn-info mr-auto ml-auto" name="action" value="save">Save Project</button>
+					</div>
+				</div>
+			</form>
+		</div>	
+	</body>
+</html>

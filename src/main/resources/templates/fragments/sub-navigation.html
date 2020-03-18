@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<!-- Header -->
+	<head th:replace="fragments/header :: header"></head>
+	<body>
+		<!-- Navigation Bar -->
+		<nav th:replace="fragments/navigation-secure :: navigation">
+		</nav>
+		<!-- Sub Navigation Bar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" th:fragment="sub-nav">
+			<div class="collapse navbar-collapse">
+				<!--<ul class="nav sub-nav-vertical-line mr-auto">
+					<li class="nav-item">
+						<a class="nav-link active sub-nav-text-color" th:href="@{/home}">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active sub-nav-text-color" th:href="@{/projects}">Projects</a>
+					</li>
+				</ul>  -->
+				<ul class="nav sub-nav-right-spacing">
+					<li class="nav-item">
+						<a class="btn btn-info sub-nav-bar-link" th:href="@{/create-project}">Create Process Area</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		
+		<!-- Sub Navigation Bar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" th:fragment="sub-nav-task">
+			<div class="collapse navbar-collapse">
+				<!--<ul class="nav sub-nav-vertical-line mr-auto">
+					<li class="nav-item">
+						<a class="nav-link active sub-nav-text-color" th:href="@{/home}">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active sub-nav-text-color" th:href="@{/projects}">Projects</a>
+					</li>
+				</ul>  -->
+				<ul class="nav sub-nav-right-spacing">
+					<li class="nav-item">
+						<a class="btn btn-info sub-nav-bar-link" th:href="@{/project/{id}/create-task(id = ${project_id})}">Create Task</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</body>
+</html>

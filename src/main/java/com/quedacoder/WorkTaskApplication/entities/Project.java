@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -33,23 +31,15 @@ public class Project {
 	private Long projectId;
 	
 	@Column(name="project_name")
-	@NotNull
-	@Size(min=10, max=60)
 	private String projectName;
 	
-	@NotNull
-	@Size(min=15, max=60)
 	@Column(name="description")
 	private String description;
 	
 	@Column(name="process_area")
-	@NotNull
-	@Size(min=10, max=55)
 	private ProcessArea processArea;
 	
 	@Column(name="project_owner")
-	@NotNull
-	@Size(min=5, max=45)
 	private String projectOwner;
 	
 	@Column(name="created_date", nullable=false, updatable = false)

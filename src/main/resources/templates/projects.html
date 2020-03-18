@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/header :: header"></head>
+	<body>
+	
+		<!-- Navigation Bar -->
+		<nav th:replace="fragments/navigation-unsecure :: navigation">
+		</nav>
+		
+		<!-- Sub Navigation Bar -->
+		<nav th:replace="fragments/sub-navigation :: sub-nav">
+		</nav>
+		
+		<!-- Page Title Information -->
+		<!-- TODO: Figure out a way to make this a fragment and adding header to model attribute -->
+		<header class="container-fluid">
+			<h2 class="carousel-text-align" id="carousel-header-2">Projects</h2>
+		</header>
+		<!-- Display Projects and Detail -->
+		<div class="container-fluid" th:each="project, iStat : ${projects}">
+		    <div th:with="dataTarget=${'#collapse' + One}"></div>
+		    <div th:with="dataTarget1=${'collapse' + One}"></div>
+			<div class="row">
+				<div class="accordion collasped" id="accordion-custom" data-toggle="collapse" th:attr="data-target=|#collapse${iStat.count}|" th:value="${dataTarget}" aria-expanded="false">
+		  			<div class="card">
+		  				<div class="card-header custom-card-header row" id="headingOne">
+		  					<div class="col col-text-align-left">
+		  						<span th:text="${project.processArea.processArea}"></span>
+		  					</div>
+		  					<div class="col col-text-align-center">
+		  						<span th:text="${project.projectName}"></span>
+		  					</div>
+		  					<div class="col col-text-align-end">
+		  						<span th:text="${project.projectOwner}"></span>
+		  					</div>
+		  				</div>
+		  				<div th:id="|collapse${iStat.count}|" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+		  					<div class="card-body">
+		  						<div class="row">
+		  							<div class="col">
+		  								<p class="details-custom">
+		  									<span th:text="${project.description}"></span>
+		  								</p>
+		  							</div>
+		  						</div>
+		  						<div class="row">
+		  							<div class="col details-custom-links">
+		  								<div class="details-custom-link-button">
+		  									<a th:href="@{/project/{id}/tasks(id = ${project.projectId})}" class="btn btn-info">Show Tasks</a>
+		  								</div>
+		  								<div class="details-custom-link-a">
+		  									<a th:href="@{/project/edit/{id}(id = ${project.projectId})}">Edit Project</a>
+		  								</div>
+		  								<div class="details-custom-link-a">
+		  									<a th:href="@{/project/delete/{id}(id = ${project.projectId})}">Delete Project</a>
+		  								</div>
+		  							</div>
+		  						</div>
+		  					</div>
+		  				</div>
+		  			</div>
+		  		</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -4,7 +4,7 @@
 	<body>
 	
 		<!-- Navigation Bar -->
-		<nav th:replace="fragments/navigation :: navigation">
+		<nav th:replace="fragments/navigation-unsecure :: navigation">
 		</nav>
 		
 		<!-- Header Information -->
@@ -16,23 +16,25 @@
 		<!-- Login Form -->
 		<div class="container">
 			<div class="row">
-				<form class="center-forms">
+				<form class="center-forms" th:action="@{/login}" method="post">
+					<div th:if="${param.error}">
+					    <div class="alert alert-danger">Invalid username or password.</div>
+					</div>
+					<div th:if="${param.logout}">
+					    <div class="alert alert-info">You have been logged out.</div>
+					</div>
 				  	<div class="form-group row">
-				    	<label for="exampleInputEmail1">Email address</label>
-				    	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-				    	<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				    	<label for="username">Username: </label>
+				    	<input type="text" class="form-control" id="username" name="username" autofocus="autofocus" placeholder="Username">
 				  	</div>
 				  	<div class="form-group row">
-				    	<label for="exampleInputPassword1">Password</label>
-				    	<input type="password" class="form-control" id="exampleInputPassword1">
+				    	<label for="password">Password: </label>
+				    	<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 				  	</div>
-				  	<div class="form-group form-check row">
-				    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
-				    	<label class="form-check-label" for="exampleCheck1">Check me out</label>
-				  	</div>
-				  	<div class="text-align">
-				  		<a class="btn btn-primary" style="color: white;" role="button">Create Account</a>
-				  	</div>
+				  	<div class="form-group row">
+					      <button type="submit" class="btn btn-success" name="login-submit" id="login-submit">Sign In</button>
+					       <span id="registration-login-link"> New User? <a href="/" th:href="@{/registration}">Register here</a></span>
+					</div>
 				</form>			
 			</div>
 		</div>

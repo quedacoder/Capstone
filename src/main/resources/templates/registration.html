@@ -4,7 +4,7 @@
 	<body>
 	
 		<!-- Navigation Bar -->
-		<nav th:replace="fragments/navigation :: navigation">
+		<nav th:replace="fragments/navigation-unsecure :: navigation">
 		</nav>
 		
 		<!-- Header Information -->
@@ -14,7 +14,7 @@
 		</header>
 		<!-- Registration Form -->
 		<div class="container">
-			<div class="row">
+			<div cs="row">
 			    <!-- Success and Error Messages -->
 			    <div th:if="${param.success}">
 			    	<div class="alert alert-info">You've successfully registered to our awesome app!</div>
@@ -78,9 +78,6 @@
 					      <button type="submit" class="btn btn-success">Register</button>
 					       <span id="registration-login-link"> Already registered? <a href="/" th:href="@{/login}">Login here</a></span>
 					</div>
-				  	<!-- <div class="text-align">
-				  		<a th:href="@{/login}" class="btn btn-primary" style="color: white;" role="button">Create Account</a>
-				  	</div>  -->
 				</form>			
 			</div>
 		</div>

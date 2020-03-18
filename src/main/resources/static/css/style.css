@@ -22,12 +22,42 @@ li a {
 	color: white;
 }
 
-.nav>li{
-  border-right: 1px solid white;
+.sub-nav {
+	color: #222;
+	height: 80px;
+	background-color: light-grey;
 }
 
-.nav>li:last-child{
-   border: none;
+.sub-nav-text-color {
+	color: #222;
+}
+
+.sub-nav-vertical-line>li {
+	border-right: 1px solid #222;
+}
+
+/* .nav>li{ */
+/*   border-right: 1px solid white; */
+/* } */
+
+/* .nav>li:last-child{ */
+/*    border: none; */
+/* } */
+
+.vertical-line>li {
+	border-right: 1px solid white;
+}
+
+.vertical-line>li:last-child {
+	border: none;
+}
+
+.sub-nav-right-spacing {
+	margin-right: 2.5%;
+}
+
+.sub-nav-bar-link {
+	box-shadow: 1px 1px 8px 1px #17a2b8;
 }
 
 /****************************************
@@ -39,8 +69,8 @@ li a {
 
 #carousel-header-2 {
 	/*margin-left:42.5%;*/
-	margin-top: 4%;
-	margin-bottom: 4%;
+	margin-top: 3%;
+	margin-bottom: 3%;
 	color: #222;
 }
 
@@ -88,3 +118,90 @@ li a {
 	margin-left: 2%;
     margin-top: 1.5%;
 }
+
+/****************************************
+*          Project List Box             *
+*****************************************/
+.project-container {
+/*  height: 250px; */
+	width: 1% !important; 
+	padding: 10px 10px;
+	background-color: white;
+/* 	border: 2px solid #4c2e16; */
+	box-shadow: 1px 1px 8px 1px darkgrey;
+ 	margin: 5% .3%; */
+}
+
+.project-form-space {
+	margin: 5% 2.5% 2.5%;
+}
+
+.project-input {
+	width: 90%;
+	margin-bottom: 1%;
+}
+
+#accordion-custom {
+	width: 100%;
+}
+
+.details-custom {
+	margin: 1% 30% 1% 2% !important;
+}
+
+.details-custom-links {
+	margin-left: 2%;
+	display: inherit;
+}
+
+.details-custom-link-a {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 3%;
+}
+
+.details-custom-link-button {
+	margin-right: 6%;
+} 
+
+.custom-card-header {
+	display: inherit;
+}
+
+.col-text-align-left {
+	text-align: left;
+}
+
+.col-text-align-center {
+	text-align: center;
+}
+
+.col-text-align-end {
+	text-align: end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

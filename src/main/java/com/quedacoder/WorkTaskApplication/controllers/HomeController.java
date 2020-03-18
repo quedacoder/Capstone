@@ -8,17 +8,6 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String getHomePage() {
-		return "index";
-	}
-	
-	@GetMapping("/home")
-	public String getHomePage2() {
 		return "home";
 	}
-	
-	@GetMapping("/user")
-	public String userIndex() {
-		return "user/index";
-	}
-
 }

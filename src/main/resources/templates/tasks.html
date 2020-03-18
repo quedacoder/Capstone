@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/header :: header"></head>
+	<body>
+		<!-- Navigation Bar -->
+		<nav th:replace="fragments/navigation-unsecure :: navigation">
+		</nav>
+		
+		<!-- Sub Navigation Bar -->
+		<nav th:replace="fragments/sub-navigation :: sub-nav-task">
+		</nav>
+		
+		<!-- Page Title Information -->
+		<!-- TODO: Figure out a way to make this a fragment and adding header to model attribute -->
+		<header class="container-fluid">
+			<h2 class="carousel-text-align" id="carousel-header-2">Task List</h2>
+		</header>
+		
+		<!-- Display Projects and Detail -->
+		<div class="container-fluid" th:each="task, iStat : ${tasks}">
+			<div class="row">
+				<div class="accordion collasped" id="accordion-custom" data-toggle="collapse" th:attr="data-target=|#collapse${iStat.count}|" aria-expanded="false">
+		  			<div class="card">
+		  				<div class="card-header custom-card-header row" id="headingOne">
+		  					<div class="col col-text-align-left">
+		  						<span th:text="${task.taskName}"></span>
+		  					</div>
+		  					<div class="col col-text-align-center">
+		  						<span th:text="${task.taskType.taskType}"></span>
+		  					</div>
+		  					<div class="col col-text-align-end">
+		  						<span th:text="${task.status.status}"></span>
+		  					</div>
+		  				</div>
+		  				<div th:id="|collapse${iStat.count}|" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+		  					<div class="card-body">
+		  						<div class="row">
+		  							<div class="col">
+		  								<p class="details-custom">
+		  									<span th:text="${task.taskDescription}"></span>
+		  								</p>
+		  							</div>
+		  						</div>
+		  						<div class="row">
+		  							<div class="col details-custom-links">
+		  								<div class="details-custom-link-a">
+		  									<a th:href="@{/project/task/edit/{task_id}(task_id = ${task.taskId})}">Edit Task</a>
+		  								</div>
+		  								<div class="details-custom-link-a">
+		  									<a th:href="@{/project/task/delete/{task_id}(task_id = ${task.taskId})}">Delete Task</a>
+		  								</div>
+		  							</div>
+		  						</div>
+		  					</div>
+		  				</div>
+		  			</div>
+		  		</div>
+			</div>
+		</div>
+	</body>
+</html>
