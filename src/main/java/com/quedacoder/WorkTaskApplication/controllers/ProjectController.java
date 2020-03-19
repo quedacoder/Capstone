@@ -40,7 +40,7 @@ public class ProjectController {
 	public String getCreateProjectForm(Model model) {
 
 		// Get the authenticated user to set createdBy field in UI
-		String authenticatedUser = "smithle";
+		String authenticatedUser = System.getProperty("user.name");
 		
 		// create empty shell of project
 		Project project = new Project();
@@ -73,8 +73,8 @@ public class ProjectController {
 		}
 
 		// Set createdBy with authenticated user
-		String authenticatedUser = "smithle";
-		projectDto.setCreatedBy(authenticatedUser);
+		String authenticatedUser = System.getProperty("user.name");
+		//projectDto.setCreatedBy(authenticatedUser);
 
 		// Save the project
 		project = projectService.saveOrUpdateProject(projectDto);
@@ -91,7 +91,7 @@ public class ProjectController {
 			return "redirect:/projects";
 		}
 
-		String authenticatedUser = "smithle";
+		String authenticatedUser = System.getProperty("user.name");
 		model.addAttribute("project", project);
 		model.addAttribute("authenticatedUser", authenticatedUser);
 
@@ -119,11 +119,6 @@ public class ProjectController {
 			return "/project-edit";
 		}
 
-		String authenticatedUser = "smithle";
-
-		// set changedBy and createdBy
-		projectDto.setChangedBy(authenticatedUser);
-		projectDto.setChangedBy(authenticatedUser);
 		projectDto.setId(id);
 
 		// save the changes

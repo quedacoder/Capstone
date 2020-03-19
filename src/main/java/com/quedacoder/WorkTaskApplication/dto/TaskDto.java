@@ -39,15 +39,6 @@ public class TaskDto {
 	private String ticketNumber;
 	
 	private Project project;
-	
-	@NotEmpty
-	private String createdBy;
-	
-	private String changedBy;
-	
-	private Date createdDate;
-	
-	private Date changedDate;
 
 	/**
 	 * @return the id
@@ -149,34 +140,6 @@ public class TaskDto {
 	}
 
 	/**
-	 * @return the createdBy
-	 */
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	/**
-	 * @param createdBy the createdBy to set
-	 */
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	/**
-	 * @return the changedBy
-	 */
-	public String getChangedBy() {
-		return changedBy;
-	}
-
-	/**
-	 * @param changedBy the changedBy to set
-	 */
-	public void setChangedBy(String changedBy) {
-		this.changedBy = changedBy;
-	}
-
-	/**
 	 * @return the ticketNumber
 	 */
 	public String getTicketNumber() {
@@ -203,33 +166,4 @@ public class TaskDto {
 	public void setProject(Project project) {
 		this.project = project;
 	}
-
-	/**
-	 * @return the createdDate
-	 */
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-
-	/**
-	 * @param createdDate the createdDate to set
-	 */
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-
-	/**
-	 * @return the changedDate
-	 */
-	public Date getChangedDate() {
-		return changedDate;
-	}
-
-	/**
-	 * @param changedDate the changedDate to set
-	 */
-	public void setChangedDate(Date changedDate) {
-		this.changedDate = changedDate;
-	}
-	
 }

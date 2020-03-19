@@ -49,6 +49,8 @@ public class TaskController {
 		// Create a new shell of TaskDto
 		TaskDto newTask = new TaskDto();
 		
+		String authenticatedUser = System.getProperty("user.name");;
+		model.addAttribute("authenticatedUser", authenticatedUser);
 		model.addAttribute("task", newTask);
 		model.addAttribute("project_id", id);
 		
@@ -113,6 +115,8 @@ public class TaskController {
 		}
 		
 		// add objects to the model
+		String authenticatedUser = System.getProperty("user.name");;
+		model.addAttribute("authenticatedUser", authenticatedUser);
 		model.addAttribute("task", editTask);
 		model.addAttribute("project", project);
 		
@@ -147,7 +151,6 @@ public class TaskController {
 		}
 		
 		taskDto.setProject(taskToUpdate.getProject());
-		taskDto.setCreatedDate(taskToUpdate.getCreatedDate());
 		taskToUpdate = taskService.saveOrUpdateProject(taskDto);
 		
 		return "redirect:/project/" + project_id + "/tasks";
@@ -167,10 +170,6 @@ public class TaskController {
 		taskDto.setStatus(task.getStatus());
 		taskDto.setComments(task.getComments());
 		taskDto.setTicketNumber(task.getTicketNumber());
-		taskDto.setCreatedBy(task.getCreatedBy());
-		taskDto.setCreatedDate(task.getCreatedDate());
-		taskDto.setChangedBy(task.getChangedBy());
-		taskDto.setChangedDate(task.getChangedDate());
 		
 		Long project_id = task.getProject().getProjectId();
 		

@@ -21,10 +21,6 @@ public class ProjectDto {
 	@NotEmpty(message="Please enter the name of the Project Owner!!!")
 	private String projectOwner;
 	
-	private String createdBy;
-	
-	private String changedBy;
-	
 	/**
 	 * @return the id
 	 */
@@ -93,33 +89,5 @@ public class ProjectDto {
 	 */
 	public void setProjectOwner(String projectOwner) {
 		this.projectOwner = projectOwner;
-	}
-
-	/**
-	 * @return the createdBy
-	 */
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	/**
-	 * @param createdBy the createdBy to set
-	 */
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	/**
-	 * @return the changedBy
-	 */
-	public String getChangedBy() {
-		return changedBy;
-	}
-
-	/**
-	 * @param changedBy the changedBy to set
-	 */
-	public void setChangedBy(String changedBy) {
-		this.changedBy = changedBy;
 	}
 }

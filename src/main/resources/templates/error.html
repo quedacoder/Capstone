@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/header :: header"></head>
+	<body class="container">
+		<div id="wrapper">
+			<div class="container h-100">
+				<div class="row justify-content-center align-items-center">
+					<h1 class="ml-auto mr-auto">Oops!!!</h1>
+				</div>
+				<div class="row justify-content-center align-items-center">
+					<h5 class="ml-auto mr-auto">We have had an error...</h5>
+				</div>
+				<div class="row justify-content-center align-items-center">
+					<p class="ml-auto mr-auto">Sorry for any inconvenience. The error has been reported.</p>
+				</div>
+				<div class="row justify-content-center align-items-center">
+					<p class="ml-auto mr-auto">Select <a th:href="@{/}">here</a> to go home.</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

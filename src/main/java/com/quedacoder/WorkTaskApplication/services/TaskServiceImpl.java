@@ -55,23 +55,9 @@ public class TaskServiceImpl implements TaskService {
 		Date date = new Date(System.currentTimeMillis());
 		
 		// check if update or create
-		if (taskDto.getTaskId() != null) {
-			
+		if (taskDto.getTaskId() != null) {	
 			// this is an update
 			task.setTaskId(taskDto.getTaskId());
-			task.setChangedBy(taskDto.getCreatedBy());
-			task.setChangedDate(date);
-			task.setCreatedDate(taskDto.getCreatedDate());
-			task.setCreatedBy(taskDto.getCreatedBy());
-			
-		} else {
-			
-			// only want to set on create
-			task.setCreatedBy(taskDto.getCreatedBy());
-			task.setCreatedDate(date);
-			task.setChangedBy(taskDto.getCreatedBy());
-			task.setChangedDate(date);
-			
 		}
 		
 		task.setTaskName(taskDto.getTaskName());

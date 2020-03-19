@@ -1,6 +1,5 @@
 package com.quedacoder.WorkTaskApplication.services;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,25 +49,11 @@ public class ProjectServiceImpl implements ProjectService {
 		
 		// Create a new instanace of the project 
 		Project project = new Project();	
-		Date date = new Date(System.currentTimeMillis());
 		
 		// null id means this is an update
 		if (projectDto.getId() != null ) {
-			
 			// this is an update
 			project.setProjectId(projectDto.getId());
-			project.setChangedBy(projectDto.getCreatedBy());
-			project.setChangedDate(date);
-			project.setCreatedBy(projectDto.getCreatedBy());
-			project.setCreatedDate(date);
-			
-		} else {
-			
-			// only want to set on create
-			project.setCreatedBy(projectDto.getCreatedBy());
-			project.setCreatedDate(date);
-			project.setChangedBy(projectDto.getChangedBy());
-			project.setChangedDate(date);
 			
 		}
 		
